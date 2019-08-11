@@ -1,0 +1,70 @@
+{% extends 'base.html'%}
+{%block state_compare%}active {% endblock%}
+<!--popular and recent post are put here-->
+{% block post_content %}
+{% for i in pro1%}
+{%for j in pro2%}
+<h5>Comparison between {{i.title}} & {{j.title}}</h5>
+<table class="table table-bordered justify-content-center">
+  <tr>
+    <td>Title</td>
+    <td>{{i.title}}</td>
+    <td>{{j.title}}</td>
+  </tr>
+
+  <tr>
+    <td>Android</td>
+    <td>{{i.android}}</td>
+    <td style="background:green;">{{j.android}}</td>
+  </tr>
+
+  <tr>
+    <td>Ram</td>
+    {%ifequal i.ram "4 GB"%}
+    <td style="background:green;">{{i.ram}}</td>
+    {% else %}
+    <td style="background:hsl(180, 100%, 30%);">{{i.ram}} &#128078;</td>
+    {% endifequal %}
+    <td>{{j.ram}}</td>
+  </tr>
+
+  <tr>
+    <td>Price on Amazon</td>
+    <td>{{i.price_on_amazon}}</td>
+    <td>{{j.price_on_flipkart}}</td>
+  </tr>
+
+</table>
+
+{% endfor %}
+{% endfor %}
+
+{% endblock %}
+<!---------------------------------------------------------------------------------------------------------->
+
+
+{% block side_content %}
+<h2>Latest Deals</h2>
+<div class=" row">
+  <div class="col-md-6">
+    <img src="{{k.image}}" width=60 height=120><br>
+    {{k.title}}<br>
+    <a class="btn btn-xs btn-warning text-primary p-0" href="{{k.amazon_url}}">Buy On Amazon <br>₹9,999.00</a><br>
+    ₹9,999.00 <br>
+    <a class="btn  btn-xs btn-warning p-0" href="{{k.amazon_url}}">Buy On Flipkart</a><br>
+    ₹9,599.00
+
+  </div>
+  <div class="col-md-6">
+    <img src="{{k.image}}" width=60 height=120><br>
+    {{k.title}}<br>
+    <a class="btn btn-xs btn-warning p-0" href="{{k.amazon_url}}">Buy On Amazon <br>₹9,999.00</a><br>
+    ₹9,999.00 <br>
+    <a class="btn  btn-xs btn-warning p-0" href="{{k.amazon_url}}">Buy On Flipkart</a><br>
+    ₹9,599.00
+  </div>
+
+</div>
+
+
+{% endblock%}

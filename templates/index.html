@@ -1,0 +1,122 @@
+{% extends 'base.html'%}
+{% block state_home %}
+active
+{% endblock %}
+
+<!--- Newsletters and offers start here---------------------------------------------->
+{% block signup %}
+<div class="jumbotron jumbotron-fluid" style="height:175px;padding:0px;">
+  <div class="row m-auto">
+      <div class="col-sm-6 offset-sm-3 text-center">
+          <h3>Follow up for newsletters and offers</h3>
+          <div class="info-form">
+              <form action="" class="form-inline justify-content-center">
+
+                  <div class="form-group">
+                      <label class="sr-only ">Email</label>
+                      <input type="text" class="form-control" size=40 placeholder="Enter your email address">
+                  </div>
+                  <input class="btn btn-dark ml-2" type="submit" name="" value="Sign Up">
+              </form>
+          </div>
+          <br>
+
+
+      </div>
+  </div>
+</div>
+
+{% endblock%}
+
+
+
+<!--popular and recent post are put here-->
+{% block post_content %}
+
+
+<div class="container mt-2">
+
+  <h2>Popular Posts 	&#128526</h2>
+  <div class="row">
+    <div class="col-md-5 ml-1 ">
+      <img src="{{all.image}}" width="100%" height='192'><br>
+      <a href="{{all.url}}"><b>{{all.title}}</b></a><br>
+      {{all.date}}
+    </div>
+    <div class="col-md-5 ml-1">
+      <img src="{{all.image}}" width="100%" height='192'><br>
+      {{all.title}}<br>
+    <hr>  {{all.date}}<hr>
+    </div>
+
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-5 ml-1">
+       <img src="{{all.image}}" width="100%" height='192' ><br>
+      {{all.title}}<br>
+      {{all.date}}
+    </div>
+    <div class="col-md-5 ml-1">
+      <img src="{{all.image}}" width="100%" height='192'><br>
+      <a href="{{all.url}}"><b>{{all.title}}</b></a><br>
+      {{all.date}}
+    </div>
+  </div>
+<hr>
+  <h2>Popular Products</h2>
+  <div class="container" style="padding:0;margin:0">
+    <div class="row mt-2">
+      <div class="col-md-3">
+        {{i.title}}<br>
+        <img class="ml-3 pl-5" src="{{i.image}}" height="240" width="120"><br>
+        <a class="btn btn-danger btn-sm mt-1"href="#">Buy Now</a>
+        <a class="btn btn-secondary btn-sm mt-1 ml-3" width="10" height="10" href="#">Review</a>
+      </div>
+
+      <div class="col-md-3">
+        {{i.title}}<br>
+        <img class="ml-3" src="{{i.image}}" alt="" height="240" width="120"><br>
+        <a class="btn btn-danger btn-sm mt-1"href="#">Buy Now</a>
+        <a class="btn btn-secondary btn-sm mt-1 ml-3" width="10" height="10" href="#">Review</a>
+      </div>
+
+      <div class="col-md-3">
+        {{i.title}}<br>
+        <img class="ml-3" src="{{i.image}}" alt="" height="240" width="120"><br>
+        <a class="btn btn-danger btn-sm mt-1"href="#">Buy Now</a>
+        <a class="btn btn-secondary btn-sm mt-1 ml-3" width="10" height="10" href="#">Review</a>
+      </div>
+
+      <div class="col-md-3">
+        {{i.title}}<br>
+        <img class="ml-3" src="{{i.image}}" alt="" height="240" width="120"><br>
+        <a class="btn btn-danger btn-sm mt-1"href="#">Buy Now</a>
+        <a class="btn btn-secondary btn-sm mt-1 ml-3" width="10" height="10" href="#">Review</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+<!---------------------------------------------------------------------------------------------------------->
+
+<!--Side content goes in this tag-->
+{% block side_content %}
+<!--
+<h2>Specifications</h2>
+<ul>
+  <li>Android: {{i.android}}</li>
+  <li>RAM: {{i.ram}}</li>
+  <li>Battery: {{i.battery}}</li>
+  <li>Title: {{i.title}}</li>
+  <li>Display: {{i.display}}</li>
+  <li>Image: <img src="{{i.image}}" height="100" width="100%"></li>
+</ul> -->
+{% endblock %}
+
+<!----------------------------------------------------------------------------------------------------------->

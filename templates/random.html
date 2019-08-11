@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block post_content %}
+
+<div class="random row mt-2">
+  <div class="col-md-1">
+  <span><button onclick=landingimage() class="m-1"><img src="{{pro.image}}"  width="40"  height=80></button>
+    <button onclick=showimage() class="m-1"><img src="{{pro.other_images}}"  width="40" height=80></button>
+    <button onclick=showimage() class="m-1"><img src="{{pro.other_images}}"  width="40" height=80></button></span>
+  </div>
+  <div class="col-md-4 m-0 justify-content-center">
+    <img src="{{pro.image}}" id='show' width="240" height='480'>
+  </div>
+  <div class="col-md-7 ">
+   <h3>{{pro.title}}</h3>
+   <a class="btn btn-light "href="{{pro.amazon_url}}">Buy on Amazon</a>
+
+  </div>
+
+
+</div>
+<script type="text/javascript">
+function showimage(){
+  document.getElementById('show').src='{{pro.other_images}}';
+}
+function landingimage(){
+  document.getElementById('show').src='{{pro.image}}';
+}
+</script>
+{% endblock %}
+
+{% block side_content %}
+
+{% for i in imagess %}
+ <img src="{{i}}" alt="" width=40 height=80><br>
+{% endfor %}
+
+{% endblock %}

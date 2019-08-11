@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{%block state_blog%}active {% endblock%}
+{% block post_content%}
+<div class="container">
+  <h1>{{all.title}}</h1>
+  <span>{{all.date}} Ashutosh Verma 27 Comments</span><br>
+  <img  class="m-1 text-primary"src="{{all.image}}" alt="lljalfjlkasjflasjfljlfjasljf" width="100%">
+
+<p>{{all.post}}</p>
+
+
+</div>
+{% endblock%}
